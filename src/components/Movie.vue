@@ -1,5 +1,6 @@
 <template>
-  <main>
+
+  <div class="movies_cont">
     <ul>
       <li>
         
@@ -10,7 +11,7 @@
         
       </li>
     </ul>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -23,5 +24,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../style/generals";
+@import "../style/vars";
+
+.movies_cont {
+  width: 19%;
+  padding: 5px;
+  margin:5px;
+  background-color: #00000075;
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+  }
+}
 
 </style>

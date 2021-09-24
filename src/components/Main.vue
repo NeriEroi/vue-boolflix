@@ -3,7 +3,10 @@
 
     <Search @performSearch="searchMovie"/>
 
-    <Movie v-for="(movie, index) in filteredMovies" :key="index" :info="movie" />
+    <div class="flex">
+      <Movie v-for="(movie, index) in filteredMovies" :key="index" :info="movie" />
+    </div>
+    
 
   </main>
 </template>
@@ -59,5 +62,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../style/generals";
+@import "../style/vars";
+
+.flex {
+  height: calc(100vh - 145px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
 
 </style>
