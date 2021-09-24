@@ -6,7 +6,7 @@
       </li>
     </ul> -->
 
-    <Movie v-for="(movie, index) in Movies" :key="index" :info="movie" />
+    <Movie v-for="(movie, index) in movies" :key="index" :info="movie" />
   </main>
 </template>
 
