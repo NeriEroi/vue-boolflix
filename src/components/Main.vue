@@ -1,12 +1,8 @@
 <template>
   <main>
-    <!-- <ul>
-      <li v-for="(movie, index) in Movies" :key="index">
-        {{ movie.title }}
-      </li>
-    </ul> -->
 
     <Movie v-for="(movie, index) in movies" :key="index" :info="movie" />
+    
   </main>
 </template>
 

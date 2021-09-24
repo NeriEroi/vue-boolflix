@@ -1,9 +1,12 @@
 <template>
   <main>
     <ul>
-      <img :src="info.poster_path" :alt="info.title">
       <li>
-        {{ info.title }}
+        <div> {{ info.title }} </div>
+        <div> {{ info.original_title }} </div>
+        <div> {{ info.original_language }} </div>
+        <div> {{ info.vote_count }} </div>
+        
       </li>
     </ul>
   </main>
