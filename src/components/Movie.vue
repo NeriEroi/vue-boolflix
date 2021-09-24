@@ -2,10 +2,11 @@
   <main>
     <ul>
       <li>
+        
         <div> {{ info.title }} </div>
         <div> {{ info.original_title }} </div>
         <div> {{ info.original_language }} </div>
-        <div> {{ info.vote_count }} </div>
+        <div> {{ info.vote_average }} </div>
         
       </li>
     </ul>
