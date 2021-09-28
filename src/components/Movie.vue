@@ -6,7 +6,15 @@
         
         <div> {{ info.title }} </div>
         <div> {{ info.original_title }} </div>
-        <div> {{ info.original_language }} </div>
+
+        <div class="center">
+          <div class="flag_cont"> 
+        
+            <img :src="require(`../assets/img/${info.original_language}.jpg`)" alt="info.original_language"> 
+        
+          </div>
+        </div>
+
         <div> {{ info.vote_average }} </div>
         
       </li>
@@ -18,7 +26,12 @@
 
 export default {
   name: 'Movie',
-  props: ['info']
+  props: ['info'],
+  data: function () {
+    return {
+      flags: ["en", "de", "ja"]
+    }
+  }
 }
 </script>
 
@@ -36,6 +49,21 @@ export default {
   ul {
     list-style-type: none;
     text-align: center;
+
+    li .center {
+      display: flex;
+      justify-content: center;
+
+      .flag_cont {
+      width: 30px;
+      height: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 }
 

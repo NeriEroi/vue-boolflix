@@ -6,7 +6,6 @@
     <div class="flex">
       <Movie v-for="(movie, index) in filteredMovies" :key="index" :info="movie" />
     </div>
-    
 
   </main>
 </template>
@@ -14,7 +13,7 @@
 <script>
 import axios from 'axios';
 import Movie from "./Movie.vue";
-import Search from "./Search.vue"
+import Search from "./Search.vue";
 export default {
   name: 'Main',
   components: {
@@ -25,7 +24,7 @@ export default {
     return {
       APIUrl: 'https://api.themoviedb.org/3/search/movie?api_key=4b82c92c1924d290b7b7e9d2d0132a2d&query=rick',
       movies: [],
-      movieText: ''
+      movieText: '', 
     }
   },
   created() {
