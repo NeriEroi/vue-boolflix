@@ -28,7 +28,7 @@
       </li>
     </ul>
   </div>
-  
+
 </template>
 
 <script>
@@ -51,7 +51,8 @@ export default {
 
 .movies_cont {
   width: 19%;
-  padding: 5px;
+  height: 500px;
+  padding: 10px 5px;
   margin:5px;
   background-color: yellow;
 
@@ -64,8 +65,9 @@ export default {
       justify-content: center;
 
       .poster_cont {
-      width: 250px;
-      height: 350px;
+        width: 250px;
+        height: 350px;
+        margin-bottom: 5px;
 
         img {
           width: 100%;
@@ -81,6 +83,7 @@ export default {
       .flag_cont {
         width: 30px;
         height: 20px;
+        margin: 5px;
 
         img {
           width: 100%;
