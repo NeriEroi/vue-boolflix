@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      APIUrl: 'https://api.themoviedb.org/3/search/movie?api_key=4b82c92c1924d290b7b7e9d2d0132a2d&query=rick',
+      APIUrl: 'https://api.themoviedb.org/3/search/movie?api_key=4b82c92c1924d290b7b7e9d2d0132a2d&query=movie',
       movies: [],
       movieText: '', 
     }
@@ -65,12 +65,12 @@ export default {
 @import "../style/vars";
 
 .flex {
-  height: calc(100vh - 145px);
+  min-height: calc(100vh - 145px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  background-color: $black;
 }
 
 </style>

@@ -3,23 +3,32 @@
   <div class="movies_cont">
     <ul>
       <li>
-        
-        <div> {{ info.title }} </div>
-        <div> {{ info.original_title }} </div>
 
-        <div class="center">
-          <div class="flag_cont"> 
+        <div class="center_poster">
+
+          <div class="poster_cont">
+            <img :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`" :alt="info.poster_path">
+          </div>
+
+        </div>
         
-            <img :src="require(`../assets/img/${info.original_language}.jpg`)" alt="info.original_language"> 
+        <div><span style="color:blue;">TITLE:</span> {{ info.title }} </div>
+        <div><span style="color:blue;"> ORIGINAL TITLE:</span> {{ info.original_title }} </div>
+
+        <div class="center_flag">
+          <div class="flag_cont">
+        
+            <img :src="require(`../assets/img/${info.original_language}.jpg`)" :alt="info.original_language">
         
           </div>
         </div>
 
-        <div> {{ info.vote_average }} </div>
+        <div><span style="color:blue;">VOTE: </span> {{ info.vote_average }} </div>
         
       </li>
     </ul>
   </div>
+  
 </template>
 
 <script>
@@ -44,19 +53,34 @@ export default {
   width: 19%;
   padding: 5px;
   margin:5px;
-  background-color: #00000075;
+  background-color: yellow;
 
   ul {
     list-style-type: none;
     text-align: center;
 
-    li .center {
+    li .center_poster {
+      display: flex;
+      justify-content: center;
+
+      .poster_cont {
+      width: 250px;
+      height: 350px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    } 
+
+    li .center_flag {
       display: flex;
       justify-content: center;
 
       .flag_cont {
-      width: 30px;
-      height: 20px;
+        width: 30px;
+        height: 20px;
 
         img {
           width: 100%;
