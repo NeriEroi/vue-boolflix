@@ -106,7 +106,7 @@ export default {
       margin-top: 10px;
 
       i {
-        color: rgb(0, 89, 255);
+        color: $blue;
       }
     }
   }
