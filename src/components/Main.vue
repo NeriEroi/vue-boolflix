@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      APIUrl: 'https://api.themoviedb.org/3/search/movie?api_key=4b82c92c1924d290b7b7e9d2d0132a2d&query=movie',
+      APIMoviesUrl: 'https://api.themoviedb.org/3/search/movie?api_key=4b82c92c1924d290b7b7e9d2d0132a2d&query=',
       movies: [],
       movieText: '', 
     }
@@ -46,7 +46,7 @@ export default {
   methods: {
     getMovies() {
       axios
-        .get(this.APIUrl)
+        .get(this.APIMoviesUrl + this.movieText)
         .then( result => {
           // console.log(result);
           this.movies = result.data.results
@@ -54,7 +54,8 @@ export default {
     },
     searchMovie(text) {
       this.movieText = text;
-    }
+      this.getMovies();
+    },
   }
 }
 </script>

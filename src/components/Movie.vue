@@ -12,8 +12,8 @@
 
         </div>
         
-        <div><span style="color:blue;">TITLE:</span> {{ info.title }} </div>
-        <div><span style="color:blue;"> ORIGINAL TITLE:</span> {{ info.original_title }} </div>
+        <div><span style="color:rgb(0, 89, 255);">TITLE:</span> {{ info.title }} </div>
+        <div><span style="color:rgb(0, 89, 255);"> ORIGINAL TITLE:</span> {{ info.original_title }} </div>
 
         <div class="center_flag">
           <div class="flag_cont">
@@ -23,8 +23,11 @@
           </div>
         </div>
 
-        <div><span style="color:blue;">VOTE: </span> {{ info.vote_average }} </div>
-        
+        <!-- <div><span style="color:blue;">VOTE: </span> {{ info.vote_average }} </div> -->
+        <div class="stars_cont">
+          <i v-for="n in 5" :key="n" class="fa-star" :class="(n <= getVote()) ? 'fas' : 'far'"></i>
+        </div>
+
       </li>
     </ul>
   </div>
@@ -40,14 +43,21 @@ export default {
     return {
       flags: ["en", "de", "ja"]
     }
+  },
+  methods: {
+    getVote() {
+      return Math.ceil(this.info.vote_average / 2)
+    }
   }
-}
+} 
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../style/generals";
 @import "../style/vars";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 .movies_cont {
   width: 19%;
@@ -67,7 +77,7 @@ export default {
       .poster_cont {
         width: 250px;
         height: 350px;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
 
         img {
           width: 100%;
@@ -83,12 +93,20 @@ export default {
       .flag_cont {
         width: 30px;
         height: 20px;
-        margin: 5px;
+        margin: 10px;
 
         img {
           width: 100%;
           height: 100%;
         }
+      }
+    }
+
+    li .stars_cont {
+      margin-top: 10px;
+
+      i {
+        color: rgb(0, 89, 255);
       }
     }
   }
