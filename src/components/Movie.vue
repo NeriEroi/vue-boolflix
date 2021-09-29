@@ -12,8 +12,12 @@
 
         </div>
         
-        <div><span style="color:rgb(0, 89, 255);">TITLE:</span> {{ info.title }} </div>
-        <div><span style="color:rgb(0, 89, 255);"> ORIGINAL TITLE:</span> {{ info.original_title }} </div>
+        <div class="title">
+          <span>TITLE:</span> {{ info.title }} 
+        </div>
+        <div class="original_title">
+          <span> ORIGINAL TITLE:</span> {{ info.original_title }} 
+        </div>
 
         <div class="center_flag">
           <div class="flag_cont">
@@ -99,6 +103,22 @@ export default {
           width: 100%;
           height: 100%;
         }
+      }
+    }
+
+    li .title {
+      color: $black;
+
+      span {
+        color: $blue;
+      }
+    }
+
+    li .original_title {
+      color: $black;
+
+      span {
+        color: $blue;
       }
     }
 
